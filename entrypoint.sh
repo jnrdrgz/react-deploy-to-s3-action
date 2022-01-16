@@ -45,7 +45,8 @@ EOF
 #   All other flags are optional via the `args:` directive.
 #sh -c "npm ci" \
 #&& sh -c "npm run build" \
-&& sh -c "aws s3 sync ${SOURCE_DIR:-public} s3://${AWS_S3_BUCKET}/${DEST_DIR} \
+#&& 
+sh -c "aws s3 sync ${SOURCE_DIR:-public} s3://${AWS_S3_BUCKET}/${DEST_DIR} \
               --profile react-deploy-to-s3-action \
               --no-progress \
               ${ENDPOINT_APPEND} $*"
