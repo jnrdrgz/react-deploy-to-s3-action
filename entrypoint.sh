@@ -51,7 +51,7 @@ echo $(ls)
 echo $(pwd)
 echo  ${SOURCE_DIR:-public}
 
-sh -c "aws s3 sync ${SOURCE_DIR:-"build"} s3://${AWS_S3_BUCKET} \
+sh -c "aws s3 sync ${SOURCE_DIR:-public} s3://${AWS_S3_BUCKET} \
               --profile react-deploy-to-s3-action \
               --no-progress \
               ${ENDPOINT_APPEND} $*"
