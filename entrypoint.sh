@@ -53,8 +53,7 @@ echo  ${SOURCE_DIR:-public}
 
 sh -c "aws s3 sync ${SOURCE_DIR:-public} s3://${AWS_S3_BUCKET} \
               --profile react-deploy-to-s3-action \
-              --no-progress \
-              ${ENDPOINT_APPEND} $*"
+              --no-progress"
 SUCCESS=$?
 
 if [ $SUCCESS -eq 0 ]
